@@ -1,0 +1,46 @@
+<page>
+
+  <table id="top">
+    <tr>
+      <td>{{static.university}}</td>
+      <td class="right">{{static.synopsisOf[0]}}</td>
+    </tr>
+    <tr>
+      <td>{{static.school}}</td>
+      <td class="right">{{static.synopsisOf[1]}}</td>
+    </tr>
+    <tr>
+      <td>{{static.programme}}</td>
+      <td></td>
+    </tr>
+
+    <table id="data">
+      <tr class="border-top">
+        <td class="bold">Written by:</td><td>{{details.author}}</td>
+      </tr>
+      <tr class="border-top">
+        <td class="bold">Name of thesis:</td><td>{{details.title}}</td>
+      </tr><tr class="border-top">
+        <td class="bold">Date:</td><td>{{date()}}</td>
+        </td>
+      </tr><tr class="border-top">
+        <td class="bold">Pages:</td><td>{{details.pages || pageNumber}}</td>
+      </tr><tr class="border-top">
+        <td class="bold">Major:</td><td>{{details.major}}</td>
+      </tr><tr>
+        <td class="bold">Code:</td><td>{{details.code}}</td>
+      </tr><tr class="border-top">
+        <td class="bold">Supervisor:</td><td>{{details.supervisor}}</td>
+      </tr><tr>
+        <td class="bold">Mentor:</td><td>{{details.mentor}}</td>
+      </tr><tr class="border-top">
+        <td colspan="2" class="pre">{{details.synopsis}}</td>
+      </tr><tr class="border-top">
+        <td class="bold">Key words:</td><td>{{details.keywords}}</td>
+      </tr><tr class="border-top">
+        <td class="bold">Language:</td><td>English</td>
+      </tr>
+    </table>
+
+
+</page>

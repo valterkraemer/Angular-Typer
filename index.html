@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en" ng-app="app">
+<head>
+	<meta charset="utf-8">
+
+	<title></title>
+
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/print.css">
+
+	<link rel="stylesheet" href="css/cover.css">
+	<link rel="stylesheet" href="css/synopsis.css">
+	<link rel="stylesheet" href="css/contents.css">
+	<link rel="stylesheet" href="css/sources.css">
+
+	<script src="lib/angular.min.js"></script>
+
+	<script src="js/app.js"></script>
+	<script src="js/controllers.js"></script>
+	<script src="js/filters.js"></script>
+	<script src="js/directives.js"></script>
+
+	<script src="js/bibliography.js"></script>
+	<script src="js/details.js"></script>
+
+
+</head>
+<body id="body" ng-controller="MainCtrl">
+	<settings-bar></settings-bar>
+
+	<div class="document">
+
+		<div class="cover" ng-include src="'views/cover.html'"></div>
+		<div class="synopsis" ng-include src="'views/synopsis.html'"></div>
+		<div class="contents" ng-include src="'views/contents.html'"></div>
+		<div class="content" ng-include src="'views/content.html'"></div>
+		<div class="sources" ng-include src="'views/sources.html'"></div>
+
+	</div>
+
+</body>
+</html>

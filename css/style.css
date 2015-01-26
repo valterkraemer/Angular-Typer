@@ -1,0 +1,143 @@
+/* CSS RESET */
+/* Eric Meyer's Reset CSS v2.0 - http://cssreset.com */
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{border:0;font-size:100%;font:inherit;vertical-align:baseline;margin:0;padding:0}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:none}table{border-collapse:collapse;border-spacing:0}
+
+a:link, a:visited, a:hover, a:active {
+  color: #000;
+  text-decoration: none;
+}
+
+@font-face {
+  font-family: dayRoman;
+  src: url(../lib/DAYROM.ttf);
+}
+
+body {
+  font-size: 16px;
+  font-family: dayRoman;
+  line-height: 1.5em;
+
+  text-align: justify;
+}
+
+.page {
+  background: white;
+  width: 21cm;
+  height: 29.7cm;
+  display: block;
+
+  margin: 30px auto;
+  border-radius: 4px;
+  border: 1px #D3D3D3 solid;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.page-content {
+  padding: 2cm;
+}
+
+.figure {
+  margin: 1.5em auto;
+}
+
+.figure img {
+  width: 100%;
+}
+
+.figure .text {
+  text-align:center;
+}
+
+.page-number {
+  position: absolute;
+  bottom: 20mm;
+  width: 210mm;
+  text-align: center;
+}
+
+
+
+h1 {
+  font-size: 2em;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: 1.5em;
+}
+
+h3 {
+  font-size: 1.2em;
+}
+
+h1, h2, h3 {
+  margin: 1em 0;
+}
+
+/*
+body {
+  font-family: dayRoman;
+  font-size: 14px;
+  line-height: 22px;
+  text-align:justify;
+  margin: 18mm;
+
+  width: 14.9cm;
+}
+
+ul {
+  text-align:left;
+}
+
+.pre {
+  white-space: pre;
+}
+
+h1 {
+  text-align: center;
+  padding-bottom: 1em;
+}
+
+h1, h2 {
+  text-transform: uppercase;
+}
+
+h2, h3, h4 {
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+}
+
+img {
+  width: 100%;
+}
+
+.image {
+  margin: 1.5em auto;
+}
+
+.image .text {
+  margin-top: 0.5em;
+  text-align: center;
+  font-style: italic;
+}
+
+td {
+  vertical-align: bottom;
+}
+
+.cover {
+  text-align: center;
+  margin-top: 50%;
+}
+
+.cover .title {
+  font-size: 3em;
+  margin-bottom: 1em;
+}
+
+.cover .date {
+  font-size: 1.5em;
+}
+
+*/
