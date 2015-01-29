@@ -4,6 +4,8 @@ angular.module('controllers', [])
   $scope.details = details;
   $scope.static = static;
 
+  $scope.loaded = 1;
+
   $scope.goToAnchor = function(anchor) {
     if ($location.hash() !== anchor) {
       // set the $location.hash to `newHash` and
@@ -26,6 +28,9 @@ angular.module('controllers', [])
     } else {
       return (new Date).toLocaleDateString();
     }
+  }
 
+  $scope.load = function() {
+    $scope.loaded += 1;
   }
 })

@@ -30,11 +30,11 @@
 
 	<div class="document">
 
-		<div class="cover" ng-include src="'views/cover.html'"></div>
-		<div class="synopsis" ng-include src="'views/synopsis.html'"></div>
-		<div class="contents" ng-include src="'views/contents.html'"></div>
-		<div class="content" ng-include src="'views/content.html'"></div>
-		<div class="sources" ng-include src="'views/sources.html'"></div>
+		<div ng-if="loaded > 0" class="cover" ng-include src="'views/cover.html'" onload="load()"></div>
+		<div ng-if="loaded > 1" class="synopsis" ng-include src="'views/synopsis.html'" onload="load()"></div>
+		<div ng-if="loaded > 2" class="contents" ng-include src="'views/contents.html'" onload="load()"></div>
+		<div ng-if="loaded > 3" class="content" ng-include src="'views/content.html'" onload="load()"></div>
+		<div ng-if="loaded > 4" class="sources" ng-include src="'views/sources.html'" onload="load()"></div>
 
 	</div>
 
