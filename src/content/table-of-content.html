@@ -1,0 +1,10 @@
+<h1 skip>Table of Contents</h1>
+
+<ul class="table-of-content">
+    <li ng-repeat="heading in headings" ng-class="'h' + heading.level">
+        <span class="number" ng-bind="heading.chapter"></span>
+        <span class="name" ng-bind="heading.name"></span>
+    </li>
+</ul>
+
+<clearpage></clearpage>

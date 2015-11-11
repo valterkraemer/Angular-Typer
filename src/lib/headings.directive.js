@@ -7,7 +7,10 @@
     return {
       restrict: 'EA',
       link: function(scope, elem, attrs) {
-        elem[0].innerHTML = tableOfContentsSvc.register(1, elem[0].innerHTML) + ' ' + elem[0].innerHTML;
+        if (!('skip' in attrs)) {
+          var item = tableOfContentsSvc.register(1, elem[0].innerHTML);
+          elem[0].innerHTML = item.chapter + ' ' + item.name;
+        }
       }
     };
   })
@@ -16,7 +19,10 @@
     return {
       restrict: 'EA',
       link: function(scope, elem, attrs) {
-        elem[0].innerHTML = tableOfContentsSvc.register(2, elem[0].innerHTML) + ' ' + elem[0].innerHTML;
+        if (!('skip' in attrs)) {
+          var item = tableOfContentsSvc.register(2, elem[0].innerHTML);
+          elem[0].innerHTML = item.chapter + ' ' + item.name;
+        }
       }
     };
   })
@@ -25,7 +31,10 @@
     return {
       restrict: 'EA',
       link: function(scope, elem, attrs) {
-        elem[0].innerHTML = tableOfContentsSvc.register(3, elem[0].innerHTML) + ' ' + elem[0].innerHTML;
+        if (!('skip' in attrs)) {
+          var item = tableOfContentsSvc.register(3, elem[0].innerHTML);
+          elem[0].innerHTML = item.chapter + ' ' + item.name;
+        }
       }
     };
   })
@@ -34,7 +43,10 @@
     return {
       restrict: 'EA',
       link: function(scope, elem, attrs) {
-        elem[0].innerHTML = tableOfContentsSvc.register(4, elem[0].innerHTML) + ' ' + elem[0].innerHTML;
+        if (!('skip' in attrs)) {
+          var item = tableOfContentsSvc.register(4, elem[0].innerHTML);
+          elem[0].innerHTML = item.chapter + ' ' + item.name;
+        }
       }
     };
   })
@@ -43,7 +55,10 @@
     return {
       restrict: 'EA',
       link: function(scope, elem, attrs) {
-        elem[0].innerHTML = tableOfContentsSvc.register(5, elem[0].innerHTML) + ' ' + elem[0].innerHTML;
+        if (!('skip' in attrs)) {
+          var item = tableOfContentsSvc.register(5, elem[0].innerHTML);
+          elem[0].innerHTML = item.chapter + ' ' + item.name;
+        }
       }
     };
   });

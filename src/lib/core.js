@@ -1,17 +1,20 @@
 (function() {
   'use strict';
 
-  angular.module('angularTyper.pageSplitter', [])
+  angular.module('angularTyper.core', [])
 
-  .directive('angularTyperOld', function($timeout, fetchFiles, $compile, config, $templateRequest, $q) {
+  .directive('angularTyper', function($compile, $q, $templateRequest, $timeout, config, fetchFiles, tableOfContentsSvc) {
     return {
       restrict: 'EA',
       link: function(scope, elem, attrs) {
 
-        var startTimestamp = new Date();
-        var pageNumber = 0;
-
-        var page;
+        scope.headingNumbers = {
+          h1: 0,
+          h2: 0,
+          h3: 0,
+          h4: 0,
+          h5: 0
+        };
 
         var promises = [
           $templateRequest('lib/page-template.html'),
@@ -19,25 +22,25 @@
         ];
 
         $q.all(promises).then(function(data) {
-          var pageTemplate = data[0];
 
-          var html = data[1].join();
+          var pageTemplate = data[0];
+          var html = data[1].join('');
+
           var content = $compile(html)(scope);
+          scope.headings = tableOfContentsSvc.getHeadings();
+
+          console.log(scope.headings);
 
           var i = 0;
 
           $timeout(function() {
+
             while (i < content.length) {
-              var pageScope = scope.$new(false, scope);
-              page = $compile(pageTemplate)(pageScope);
+              var page = $compile(pageTemplate)(scope);
               elem.append(page);
               page = page.children();
-              pageNumber++;
-              pageScope.pageNumber = pageNumber;
-              scope.totPages = pageNumber;
 
               while (i < content.length) {
-
                 angular.element(page[0]).append(content[i]);
 
                 // <clearpage></clearpage> will make new page
@@ -84,12 +87,10 @@
                 i++;
                 break;
               }
-
             }
+
           });
 
-
-          //alert('Pages: ' + pageNumber + ', time: ' + (new Date() - startTimestamp));
         });
 
       }

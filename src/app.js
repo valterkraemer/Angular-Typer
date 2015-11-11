@@ -9,8 +9,9 @@
 
     parts: {
       content: [
-        'chapter1.html',
-        'chapter2.html'
+        'table-of-content.html',
+        'chapter-1.html',
+        'chapter-2.html'
       ]
     },
 
