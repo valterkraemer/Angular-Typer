@@ -11,7 +11,8 @@
       content: [
         'table-of-content.html',
         'chapter-1.html',
-        'chapter-2.html'
+        'chapter-2.html',
+        'sources.html'
       ]
     },
 

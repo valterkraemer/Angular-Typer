@@ -12,6 +12,7 @@
     // entryTags
 
     var bibliograpy;
+    var cites = [];
 
     fetchFiles.file(config.bibTex).then(function(data) {
 
@@ -39,6 +40,10 @@
             if (results.length > 1) {
               console.warn('Multiple citations with key "' + key + '"');
             }
+            if (cites.indexOf(results[0].entryTags) === -1) {
+              cites.push(results[0].entryTags);
+            }
+
             return results[0].entryTags;
           } else {
             console.error('No entry with key "' + key + '"');
@@ -46,6 +51,9 @@
 
         });
 
+      },
+      getCites: function() {
+        return cites;
       }
     };
 

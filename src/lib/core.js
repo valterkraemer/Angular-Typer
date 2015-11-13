@@ -3,7 +3,7 @@
 
   angular.module('angularTyper.core', [])
 
-  .directive('angularTyper', function($compile, $q, $templateRequest, $timeout, config, fetchFiles, tableOfContentsSvc) {
+  .directive('angularTyper', function($compile, $q, $templateRequest, $timeout, config, fetchFiles, tableOfContentsSvc, bibliograpySvc) {
     return {
       restrict: 'EA',
       link: function(scope, elem, attrs) {
@@ -28,8 +28,7 @@
 
           var content = $compile(html)(scope);
           scope.headings = tableOfContentsSvc.getHeadings();
-
-          console.log(scope.headings);
+          scope.cites = bibliograpySvc.getCites();
 
           var i = 0;
 
