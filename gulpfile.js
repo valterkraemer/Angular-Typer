@@ -31,15 +31,22 @@ gulp.task('stylus', function() {
 
 // Inject files into index.html
 gulp.task('inject', function() {
+
+  var transform = function(filepath, file, i, length) {
+    return '<script src="' + filepath + '" defer></script>';
+  };
+
   return gulp.src(files.index)
     .pipe(inject(gulp.src(bowerFiles()), {
       read: false,
       relative: true,
-      name: 'bower'
+      name: 'bower',
+      transform: transform
     }))
     .pipe(inject(gulp.src(files.js).pipe(angularFilesort()), {
       read: false,
-      relative: true
+      relative: true,
+      transform: transform
     }))
     .pipe(inject(gulp.src(files.css), {
       read: false,
