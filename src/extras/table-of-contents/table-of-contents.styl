@@ -1,0 +1,74 @@
+.table-of-content {
+  white-space: normal;
+  
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
+  .number {
+    float: left;
+  }
+  
+  .name {
+    padding-right: 10px;
+  }
+  
+  .dotted {
+    text-align: right;
+    overflow: hidden;
+    direction: rtl;
+    
+    &:after {
+      content:"......................................................................................................";
+      letter-spacing: 6px;
+    }
+  }
+  
+  .page-number {
+    text-align: right;
+    min-width: 25px;
+  }
+  
+  .h1 {
+    font-weight: 600;
+    margin-top: 10px;
+    text-transform: uppercase;
+    
+    .number {
+      min-width: 25px;
+    }
+  }
+  
+  .h2 {
+    padding-left: 25px;
+    
+    .number {
+      min-width: 35px;
+    }
+  }
+  
+  .h3 {
+    padding-left: 60px;
+    
+    .number {
+      min-width: 45px;
+    }
+  }
+  
+  .h4 {
+    padding-left: 105px;
+    
+    .number {
+      min-width: 55px;
+    }
+  }
+  
+  .h5 {
+    padding-left: 160px;
+    
+    .number {
+      min-width: 65px;
+    }
+  }
+
+}
