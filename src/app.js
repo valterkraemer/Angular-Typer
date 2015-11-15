@@ -1,29 +1,9 @@
 (function() {
   'use strict';
 
-  angular.module('superBook', [
+  angular.module('app', [
     'angularTyper'
   ])
-
-  .constant('config', {
-
-    parts: {
-      content: [
-        'table-of-content.html',
-        'chapter-1.html',
-        'chapter-2.html',
-        'sources.html'
-      ]
-    },
-
-    bibTex: {
-      bibliography: [
-        'references.bib',
-        'lahteet.bib'
-      ]
-    }
-
-  })
 
   .constant('details', {
     author: "Valter Kraemer",
@@ -37,16 +17,6 @@
     mentor: "Rusty Shackleford (Department name)",
     synopsis: "This is the documentation and demo for Angular-Typer",
     keywords: "Angular-Typer, Some, Other, Keywords",
-  })
-
-  .run(function(bibliograpySvc, $timeout, tableOfContentsSvc) {
-    $timeout(function() {
-
-    },1000);
   });
 
 })();
-
-/*
-
- */

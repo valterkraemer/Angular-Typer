@@ -1,12 +1,12 @@
 (function() {
   'use strict';
 
-  angular.module('angularTyper', [
-    'angularTyper.core',
-    'angularTyper.pageSplitter',
-    'angularTyper.headings',
-    'angularTyper.citations',
-    'angularTyper.pageNumber'
-  ]);
+  angular
+    .module('angularTyper', [
+      'angularTyper.pages',
+      'angularTyper.pageNumber',
+      'angularTyper.headings',
+      'angularTyper.bibliograpy'
+    ]);
 
 })();

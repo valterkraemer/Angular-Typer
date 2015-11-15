@@ -5,42 +5,74 @@
 	<!-- bower:css -->
 	<!-- endinject -->
 	<!-- inject:css -->
+	<link rel="stylesheet" href=".build/css/extras/table-of-contents/table-of-contents.css">
+	<link rel="stylesheet" href=".build/css/lib/grid.css">
 	<link rel="stylesheet" href=".build/css/lib/style.css">
 	<link rel="stylesheet" href=".build/css/template/table-of-content.css">
 	<!-- endinject -->
+
+
+   <!-- bower:js -->
+   <script src="bower_components/angular/angular.js" defer></script>
+   <!-- endinject -->
+   <!-- inject:js -->
+
+   <script src="lib/pages/pages.module.js" defer></script>
+
+   <script src="lib/pages/pages.service.js" defer></script>
+
+   <script src="lib/page-number/page-number.module.js" defer></script>
+
+   <script src="lib/page-number/page-number.service.js" defer></script>
+
+   <script src="lib/page-number/page-number.directive.js" defer></script>
+
+   <script src="lib/headings/headings.module.js" defer></script>
+
+   <script src="lib/headings/headings.directive.js" defer></script>
+
+   <script src="lib/img/img.module.js" defer></script>
+
+   <script src="lib/img/img.service.js" defer></script>
+
+   <script src="lib/img/img.directive.js" defer></script>
+
+   <script src="lib/files/file.module.js" defer></script>
+
+   <script src="lib/files/input.directive.js" defer></script>
+
+   <script src="lib/files/file.service.js" defer></script>
+
+   <script src="lib/citation/bibliography.module.js" defer></script>
+
+   <script src="lib/citation/citations.directive.js" defer></script>
+
+   <script src="lib/citation/bibtexParse.js" defer></script>
+
+   <script src="lib/citation/bibliograpy.service.js" defer></script>
+
+   <script src="extras/table-of-contents/table-of-contents.js" defer></script>
+
+   <script src="lib/module.js" defer></script>
+
+   <script src="app.js" defer></script>
+
+   <!-- endinject -->
+
+   <meta name="bibtex" content="bibliography/lahteet.bib">
+   <meta name="bibtex" content="bibliography/references.bib">
+
 </head>
-<body ng-app="superBook">
+<body ng-app="app" ng-strict-di>
 
-  <div angular-typer></div>
+  <div input="content/table-of-content.html"></div>
 
-  <!-- bower:js -->
-  <script src="bower_components/angular/angular.js"></script>
-  <!-- endinject -->
-  <!-- inject:js -->
+  <div input="content/chapter-1.html"></div>
+  <div input="content/chapter-2.html"></div>
 
-  <script src="lib/tableOfContents.service.js"></script>
+  <div input="content/lorem.html"></div>
 
-  <script src="lib/pagesplitter.js"></script>
-
-  <script src="lib/page-number.direcive.js"></script>
-
-  <script src="lib/module.js"></script>
-
-  <script src="lib/headings.directive.js"></script>
-
-  <script src="lib/fetchFiles.js"></script>
-
-  <script src="lib/core.js"></script>
-
-  <script src="lib/citations.directive.js"></script>
-
-  <script src="lib/bibtexParse.js"></script>
-
-  <script src="lib/bibliograpy.service.js"></script>
-
-  <script src="app.js"></script>
-
-  <!-- endinject -->
+  <div input="content/sources.html"></div>
 
 </body>
 </html>

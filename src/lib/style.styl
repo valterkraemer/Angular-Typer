@@ -6,34 +6,56 @@ html, body {
 body {
   background: rgb(204,204,204);
   margin: 50px;
+
+  > .page {
+    background: white;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 0.5cm;
+    box-shadow: 0 0 0.5cm rgba(0,0,0,0.5);
+    margin-bottom: 30px;
+
+    &.A4{
+      width: 21cm;
+      height: 29.7cm;
+      padding: 2cm;
+    }
+
+    > .inner {
+      white-space:pre-line;
+      height: 100%;
+      width: 100%;
+
+      .col-2 {
+        column-count: 2;
+        display: block
+      }
+
+      .justify {
+        text-align: justify;
+      }
+
+      > h1, > h2, > h3, > h4, > h5 {
+        &:first-child {
+          margin-top: 0;
+        }
+      }
+    }
+    
+    > .page-number {
+      text-align: center;
+    }
+  }
 }
 
-.page.A4{
-
-  background: white;
-  width: 21cm;
-  height: 29.7cm;
-  display: block;
-  margin: 0 auto;
-  margin-bottom: 0.5cm;
-  box-shadow: 0 0 0.5cm rgba(0,0,0,0.5);
-
-
-  margin-bottom: 30px;
-
-  white-space:pre-line;
-
-  padding: 2cm;
+img {
+  max-height: 100%;
+  max-width: 100%;
 }
 
-.inner {
-  height: 100%;
-  width: 100%;
-  //overflow: hidden;
-}
-
-.test {
-  padding: 50px;
+.col-2 .inner, {
+  column-count: 2;
+  display: block
 }
 
 @media print {

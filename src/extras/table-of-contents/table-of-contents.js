@@ -1,9 +1,11 @@
 (function() {
   'use strict';
 
-  angular.module('angularTyper.tableOfContents', [])
+  angular
+    .module('angularTyper.tableOfContents', [])
+    .service('tableOfContentsSvc', tableOfContentsSvc);
 
-  .service('tableOfContentsSvc', function() {
+  function tableOfContentsSvc() {
 
     var headings = [];
     var indexes = {
@@ -38,7 +40,11 @@
         var item = {
           name: name,
           chapter: chapter,
-          level: level
+          level: level,
+          page: 1,
+          setPage: function(number) {
+            this.page = number;
+          }
         };
 
         headings.push(item);
@@ -46,10 +52,14 @@
         return item;
       },
 
+      setPage: function() {
+
+      },
+
       getHeadings: function() {
         return headings;
       }
     };
-  });
+  }
 
 })();

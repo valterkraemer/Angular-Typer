@@ -1,0 +1,49 @@
+/* New grid */
+
+[class^="grid"], [class*=" grid"] {
+  display: flex;
+}
+
+.grid-column {
+  flex-direction: column;
+}
+
+.grid-row-reverse {
+  flex-direction: row-reverse;
+}
+
+.cell, cell-auto {
+  flex: 1 1 auto;
+  min-width: 0px;
+  min-height: 0px;
+}
+
+.cell-initial {
+  flex: 0 1 auto;
+  min-width: 0px;
+  min-height: 0px;
+}
+
+.cell-none {
+  flex: 0 0 auto;
+  min-width: 0px;
+  min-height: 0px;
+}
+
+.cell-1-2 {
+  flex: 0 0 50%;
+  min-width: 0px;
+  min-height: 0px;
+}
+
+.cell-1-3 {
+  flex: 0 0 33.3333%;
+  min-width: 0px;
+  min-height: 0px;
+}
+
+.cell-2-3 {
+  flex: 0 0 66.6666%;
+  min-width: 0px;
+  min-height: 0px;
+}

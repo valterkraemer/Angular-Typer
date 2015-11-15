@@ -9,8 +9,30 @@
     float: left;
   }
   
+  .name {
+    padding-right: 10px;
+  }
+  
+  .dotted {
+    text-align: right;
+    overflow: hidden;
+    direction: rtl;
+    
+    &:after {
+      content:"......................................................................................................";
+      letter-spacing: 6px;
+    }
+  }
+  
+  .page-number {
+    text-align: right;
+    min-width: 25px;
+  }
+  
   .h1 {
     font-weight: 600;
+    margin-top: 10px;
+    text-transform: uppercase;
     
     .number {
       min-width: 25px;
