@@ -5,7 +5,8 @@
     .module('angularTyper.pages', [
       'angularTyper.file',
       'angularTyper.img',
-      'angularTyper.bibliograpy'
+      'angularTyper.bibliograpy',
+      'angularTyper.handler'
     ]);
 
 })();
