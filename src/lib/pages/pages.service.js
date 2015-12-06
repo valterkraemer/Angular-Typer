@@ -35,7 +35,7 @@
     function compileHtml(data) {
 
       pageTemplate = data[0];
-      var html = data[1].join('');
+      var html = '<div></div>' + data[1].join(''); // div to be able to start document without '<' character
 
       if (!html) {
         console.error('No html');
