@@ -8,7 +8,6 @@
 	<link rel="stylesheet" href=".build/css/extras/table-of-contents/table-of-contents.css">
 	<link rel="stylesheet" href=".build/css/lib/grid.css">
 	<link rel="stylesheet" href=".build/css/lib/style.css">
-	<link rel="stylesheet" href=".build/css/template/table-of-content.css">
 	<!-- endinject -->
 
 
@@ -29,15 +28,17 @@
 
    <script src="lib/page-number/page-number.directive.js" defer></script>
 
+   <script src="lib/headings/headings.module.js" defer></script>
+
+   <script src="lib/headings/headings.directive.js" defer></script>
+
    <script src="lib/img/img.module.js" defer></script>
 
    <script src="lib/img/img.service.js" defer></script>
 
    <script src="lib/img/img.directive.js" defer></script>
 
-   <script src="lib/headings/headings.module.js" defer></script>
-
-   <script src="lib/headings/headings.directive.js" defer></script>
+   <script src="lib/handler/handler.service.js" defer></script>
 
    <script src="lib/files/file.module.js" defer></script>
 
@@ -67,6 +68,8 @@
 </head>
 <body ng-app="app" ng-strict-di>
 
+  <div input="content/cover-page.html"></div>
+  
   <div input="content/table-of-content.html"></div>
 
   <div input="content/chapter-1.html"></div>
