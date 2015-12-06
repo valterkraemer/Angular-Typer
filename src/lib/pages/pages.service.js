@@ -2,11 +2,12 @@
   'use strict';
 
   angular
-    .module('angularTyper.pages').run(runBlock);
+    .module('angularTyper.pages')
+    .run(runBlock);
 
-  runBlock.$inject = ['$rootScope', '$compile', '$q', '$templateRequest', 'FileSvc', 'ImgSvc', '$timeout', 'bibliograpySvc'];
+  runBlock.$inject = ['$rootScope', '$compile', '$q', '$templateRequest', 'FileSvc', 'ImgSvc', '$timeout', 'bibliograpySvc', '$handler'];
 
-  function runBlock($rootScope, $compile, $q, $templateRequest, FileSvc, ImgSvc, $timeout, bibliograpySvc) {
+  function runBlock($rootScope, $compile, $q, $templateRequest, FileSvc, ImgSvc, $timeout, bibliograpySvc, $handler) {
 
     var timeStart = new Date();
     var pageTemplate;
@@ -43,6 +44,7 @@
       }
 
       compiledHtml = $compile(html)($rootScope);
+
       return $timeout;
     }
 
@@ -51,6 +53,7 @@
       var i = 0;
       var pageNumber = 0;
       var firstTry = false;
+      var clearpage = false;
 
       while (i < compiledHtml.length) {
 
@@ -60,15 +63,26 @@
         elem.append(page);
         var inner = page.firstElementChild;
 
+        if (clearpage) {
+          angular.element(inner).append(compiledHtml[i]);
+          clearpage = false;
+          i++;
+        }
+
+        fillpage:
         while (i < compiledHtml.length) {
 
           angular.element(inner).append(compiledHtml[i]);
 
-          // <clearpage></clearpage> will make new page
-          if (compiledHtml[i].nodeName === 'CLEARPAGE') {
-            i++;
-            firstTry = false;
-            break;
+          // elements with 'clearpage' attribute will make new page
+          if (compiledHtml[i].attributes) {
+            for (var j = 0; j < compiledHtml[i].attributes.length; j++) {
+              if (compiledHtml[i].attributes[j].name === 'clearpage') {
+                firstTry = false;
+                clearpage = true;
+                break fillpage;
+              }
+            }
           }
 
           // Checking width to be able to support multiple columns
@@ -81,7 +95,7 @@
           // If not a span, create a new page and append it
           if (compiledHtml[i].nodeName !== 'SPAN') {
             if (firstTry) {
-              console.warn('Element over 1 page in size');
+              $handler.warn('Element over 1 page in size');
               return;
             }
             firstTry = true;
