@@ -145,7 +145,7 @@
 
         var item = {
           name: elem[0].innerHTML,
-          chapter: (h1 + '.' + h2 + '.' + h3 + '.' + h4 + '.' + (++h3)),
+          chapter: (h1 + '.' + h2 + '.' + h3 + '.' + h4 + '.' + (++h5)),
           level: 5
         };
         scope.headings.push(item);
