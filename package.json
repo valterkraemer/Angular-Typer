@@ -6,14 +6,15 @@
   "dependencies": {},
   "devDependencies": {
     "autoprefixer": "^6.0.3",
-    "browser-sync": "^2.9.11",
+    "browser-sync": "^2.10.0",
     "gulp": "^3.9.0",
     "gulp-angular-filesort": "^1.1.1",
     "gulp-inject": "^3.0.0",
-    "gulp-jshint": "^1.12.0",
+    "gulp-jshint": "^2.0.0",
     "gulp-postcss": "^6.0.1",
     "gulp-stylus": "^2.1.0",
     "gulp-watch": "^4.3.5",
+    "jshint": "^2.8.0",
     "main-bower-files": "^2.9.0"
   },
   "scripts": {
