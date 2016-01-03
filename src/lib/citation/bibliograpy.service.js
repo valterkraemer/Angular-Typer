@@ -48,8 +48,8 @@
           return;
         }
 
-        if ($rootScope.cites.indexOf(results[0].entryTags) === -1) {
-          $rootScope.cites.push(results[0].entryTags);
+        if ($rootScope.vars.cites.indexOf(results[0].entryTags) === -1) {
+          $rootScope.vars.cites.push(results[0].entryTags);
         }
 
         return results[0].entryTags;

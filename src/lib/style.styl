@@ -6,6 +6,12 @@ html, body {
 body {
   background: rgb(204,204,204);
   margin: 50px;
+  
+  &.A4 > .page {
+    width: 21cm;
+    height: 29.7cm;
+    padding: 2cm;
+  }
 
   > .page {
     background: white;
@@ -14,12 +20,6 @@ body {
     margin-bottom: 0.5cm;
     box-shadow: 0 0 0.5cm rgba(0,0,0,0.5);
     margin-bottom: 30px;
-
-    &.A4{
-      width: 21cm;
-      height: 29.7cm;
-      padding: 2cm;
-    }
 
     > .inner {
       white-space:pre-line;
@@ -34,18 +34,16 @@ body {
       .justify {
         text-align: justify;
       }
-
-      > h1, > h2, > h3, > h4, > h5 {
-        &:first-child {
-          margin-top: 0;
-        }
-      }
     }
     
     > .page-number {
       text-align: center;
     }
   }
+}
+
+h1, h2, h3, h4, h5 {
+  margin: 0;
 }
 
 img {

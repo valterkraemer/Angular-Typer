@@ -12,7 +12,7 @@
       restrict: 'EA',
       link: function(scope, elem, attrs) {
         scope.$on('pagesSplitted', function(event, data) {
-          elem[0].innerHTML = PageNumber.get(elem);
+          elem[0].innerHTML = scope.pageNumber;//PageNumber.get(elem);
         });
       }
     };

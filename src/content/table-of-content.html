@@ -1,5 +1,5 @@
 <h1 skip>Table of Contents</h1>
-
+<!--
 <ul class="table-of-content">
     <li ng-repeat="heading in headings" ng-class="'h' + heading.level" class="grid">
         <span class="cell-none number" ng-bind="heading.chapter"></span>
@@ -7,7 +7,14 @@
         <span class="cell dotted"></span>
         <span class="cell-none page-number" ng-bind="heading.page"></span>
     </li>
-</ul>
+</ul>-->
+
+<div class="table-of-content grid" ng-class="'h' + heading.level" ng-repeat="heading in $root.vars.headings">
+  <span class="cell-none number" ng-bind="heading.chapter"></span>
+  <span class="cell-none name" ng-bind="heading.name"></span>
+  <span class="cell dotted"></span>
+  <span class="cell-none page-number" ng-bind="heading.page"></span>
+</div>
 
 <h1 clearpage>test</h1>
 

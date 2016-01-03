@@ -3,7 +3,23 @@
 
   angular
     .module('angularTyper.file')
-    .directive('input', input);
+    .component('input', {
+      restrict: 'A',
+      bindings: {
+        input: '@'
+      },
+      isolate: false,
+      controller: function(FileSvc, $element) {
+        if (this.input) {
+          FileSvc.addHtmlPath(this.input);
+          $element.remove();
+        } else {
+          console.error('Input has no path specified');
+        }
+      }
+    });
+
+  /*.directive('input', input);
 
   input.$inject = ['FileSvc'];
 
@@ -19,6 +35,6 @@
         }
       }
     };
-  }
+  }*/
 
 })();
