@@ -3,6 +3,7 @@
 
   angular
     .module('angularTyper.file')
+    /*
     .component('input', {
       restrict: 'A',
       bindings: {
@@ -18,8 +19,9 @@
         }
       }
     });
+    */
 
-  /*.directive('input', input);
+  .directive('input', input);
 
   input.$inject = ['FileSvc'];
 
@@ -35,6 +37,6 @@
         }
       }
     };
-  }*/
+  }
 
 })();
